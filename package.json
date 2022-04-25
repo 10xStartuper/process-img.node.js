@@ -5,6 +5,12 @@
   "main": "app.js",
   "author": "Mukhammadyusuf Abdurakhimov",
   "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "resize":"node resizeImage.js",
+    "crop": "node cropImage.js",
+    "read": "node readImage"
+  },
   "dependencies": {
     "sharp": "^0.30.4"
   }
