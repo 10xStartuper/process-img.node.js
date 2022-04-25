@@ -7,13 +7,15 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "resize":"node ./utils/resizeImage.js",
+    "resize": "node ./utils/resizeImage.js",
     "crop": "node ./utils/cropImage.js",
     "read": "node ./utils/readImage.js",
     "rotate": "node ./utils/rotateImage.js",
-    "composite":"node ./utils/compositeImages.js"
+    "composite": "node ./utils/compositeImages.js"
   },
   "dependencies": {
+    "bwip-js": "^3.0.4",
+    "node-xlsx": "^0.21.0",
     "sharp": "^0.30.4"
   }
 }
