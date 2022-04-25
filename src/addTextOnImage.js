@@ -11,12 +11,12 @@ async function addTextOnImage(user) {
       .title { fill: #001; font-size: 18px; font-weight: 600;}
       </style>
       <text x="267" y="378" text-anchor="start" class="title">${user.first_name}</text>
-      <text x="267" y="404" text-anchor="start" class="title">${user.second_name}</text>
+      <text x="267" y="404" text-anchor="start" class="title">${user.last_name}</text>
       <text x="267" y="430" text-anchor="start" class="title">${'11/01/2022'}</text>
     </svg>
     `;
     const svgBuffer = Buffer.from(svgImage);
-    const barCodeBuffer = await generateBarCode('data represantation');
+    const barCodeBuffer = await generateBarCode(user.id);
     const image = await sharp("./images/page.jpg")
       .composite([
         {
@@ -30,7 +30,7 @@ async function addTextOnImage(user) {
             left: 32,
         },
       ])
-      .toFile("./output/sammy-text-overlay.png");
+      .toFile("./results/"+ user.id +".png");
   } catch (error) {
     console.log(error);
   }
