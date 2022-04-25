@@ -1,33 +1,10 @@
 const sharp = require("sharp");
-const bwipjs = require('bwip-js');
+const generateBarCode = require("./generateBarCode");
 
-async function generateBarCode(data){
-    try{
-        const result = await bwipjs.toBuffer({
-            bcid:        'code128',       // Barcode type
-            text:        data,    // Text to encode
-            scale:       1,               // 3x scaling factor
-            height:      5,              // Bar height, in millimeters
-            includetext: true,            // Show human-readable text
-            textxalign:  'center',        // Always good to set this
-        });
-        return result;
-    }catch(error){
-        console.log(error);
-    }
-}
-
-
-
-async function addTextOnImage() {
+async function addTextOnImage(user) {
   try {
     const width = 1241;
     const height = 1754;
-    const user = {
-        first_name: "Mukhammadyusuf",
-        second_name: "Abdurakhimov"
-    };
-
     const svgImage = `
     <svg width="${width}" height="${height}">
       <style>
@@ -59,4 +36,4 @@ async function addTextOnImage() {
   }
 }
 
-addTextOnImage();
+module.exports = addTextOnImage;
