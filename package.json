@@ -9,7 +9,8 @@
     "start": "node app.js",
     "resize":"node resizeImage.js",
     "crop": "node cropImage.js",
-    "read": "node readImage"
+    "read": "node readImage.ja",
+    "rotate": "node rotateImage.js" 
   },
   "dependencies": {
     "sharp": "^0.30.4"
