@@ -7,10 +7,10 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "resize":"node resizeImage.js",
-    "crop": "node cropImage.js",
-    "read": "node readImage.ja",
-    "rotate": "node rotateImage.js" 
+    "resize":"node ./utils/resizeImage.js",
+    "crop": "node ./utils/cropImage.js",
+    "read": "node ./utils/readImage.js",
+    "rotate": "node ./utils/rotateImage.js" 
   },
   "dependencies": {
     "sharp": "^0.30.4"
