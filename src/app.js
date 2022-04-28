@@ -19,16 +19,19 @@ const progressBar = new cliProgress.SingleBar(
 const main = async () => {
   const users = await readXlsx();
   progressBar.start(users.length, 0);
-  let user = {};
   let i = 0;
   for (const data of users) {
-    user = {
+    await addTextOnImage({
+      id: data[0],
       first_name: data[1],
       last_name: data[2],
-      id: data[0],
+      regioun: data[3],
+      date: new Date(data[4]),
+      smena: data[5],
       building: data[6],
-    };
-    await addTextOnImage(user);
+      group: data[7],
+      seat_number: data[8],
+    });
 
     progressBar.increment();
     progressBar.update(i);
@@ -40,10 +43,3 @@ const main = async () => {
 main().catch((err) => {
   console.log(err);
 });
-
-// regioun: data[3],
-// date: new Date(data[4]),
-// smena: data[5],
-// building: data[6],
-// group: data[7],
-// seat_number: data[8],
