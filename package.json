@@ -14,7 +14,9 @@
     "composite": "node ./utils/compositeImages.js"
   },
   "dependencies": {
+    "ansi-colors": "^4.1.1",
     "bwip-js": "^3.0.4",
+    "cli-progress": "^3.10.0",
     "node-xlsx": "^0.21.0",
     "sharp": "^0.30.4"
   }
