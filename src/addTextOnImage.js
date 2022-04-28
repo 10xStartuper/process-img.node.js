@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const fs = require("fs");
 const generateBarCode = require("./generateBarCode");
 
 async function addTextOnImage(user) {
@@ -33,6 +34,12 @@ async function addTextOnImage(user) {
         left: 32,
       },
     ]);
+
+    const dir = "./results";
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+
     await image.toFile("./results/" + user.id + ".png");
   } catch (error) {
     console.log(error);

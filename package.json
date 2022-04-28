@@ -6,7 +6,7 @@
   "author": "Mukhammadyusuf Abdurakhimov",
   "license": "MIT",
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./src/app.js",
     "resize": "node ./utils/resizeImage.js",
     "crop": "node ./utils/cropImage.js",
     "read": "node ./utils/readImage.js",
