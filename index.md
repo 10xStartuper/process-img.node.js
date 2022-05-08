@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+# process-img.node.js
 
-You can use the [editor on GitHub](https://github.com/MrAbdurakhimov/process-img.node.js/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Image generation application for exam papers.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![banner](https://raw.githubusercontent.com/MrAbdurakhimov/process-img.node.js/master/images/banner.jpg)
 
-### Markdown
+## Installation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. Git clone the preository.
 
-```markdown
-Syntax highlighted code block
+    ```git
+    git clone git@github.com:MrAbdurakhimov/process-img.node.js.git
+    ```
 
-# Header 1
-## Header 2
-### Header 3
+2. Get [Nodejs](https://nodejs.org/en/download/) and [Git](https://git-scm.com/downloads) and get packages installed via runnning the command below. 
 
-- Bulleted
-- List
+    ```npm
+    npm install
+    ```
 
-1. Numbered
-2. List
+3. Place your `excel` file inside `./data/data.xlsx` and it will generate the intended data to the `./results` folder.
+Note that the `id` should be unique to save the data correctly as an image.
 
-**Bold** and _Italic_ and `Code` text
+4. Run the application.
 
-[Link](url) and ![Image](src)
-```
+    ```npm
+    mpm run start
+    ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
+## Contacts
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MrAbdurakhimov/process-img.node.js/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- Telegram: @iBlogs_uz
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- E-mail: icoderx@yandex.com
