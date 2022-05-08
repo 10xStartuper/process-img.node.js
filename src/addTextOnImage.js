@@ -1,7 +1,7 @@
-const sharp = require("sharp");
-const fs = require("fs");
-const generateBarCode = require("./generateBarCode");
-
+const sharp = require('sharp');
+const fs = require('fs');
+const generateBarCode = require('./generateBarCode');
+const generatePosition = require('./generatePosition');
 async function addTextOnImage(user) {
   try {
     const width = 1241;
@@ -17,12 +17,13 @@ async function addTextOnImage(user) {
       <text x="267" y="404" text-anchor="start" class="title">${
         user.last_name
       }</text>
-      <text x="267" y="430" text-anchor="start" class="title">${"11/01/2022"}</text>
+      <text x="267" y="430" text-anchor="start" class="title">${'11/01/2022'}</text>
     </svg>
     `;
+    const id = await generatePosition(user.id);
     const svgBuffer = Buffer.from(svgImage);
     const barCodeBuffer = await generateBarCode(user.id);
-    const image = await sharp("./images/page.jpg").composite([
+    const image = await sharp('./images/background.png').composite([
       {
         input: svgBuffer,
         top: 0,
@@ -33,14 +34,15 @@ async function addTextOnImage(user) {
         top: 18,
         left: 32,
       },
+      ...id,
     ]);
 
-    const dir = "./results";
+    const dir = './results';
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
 
-    await image.toFile("./results/" + user.id + ".png");
+    await image.toFile('./results/' + user.id + '.png');
   } catch (error) {
     console.log(error);
   }
