@@ -2,6 +2,8 @@
 
 Image generation application for exam papers.
 
+![banner](https://raw.githubusercontent.com/MrAbdurakhimov/process-img.node.js/master/images/banner.jpg)
+
 ## Installation
 
 1. Git clone the preository.
@@ -24,6 +26,7 @@ Note that the `id` should be unique to save the data correctly as an image.
     ```npm
     mpm run start
     ```
+
 
 ## Contacts
 
